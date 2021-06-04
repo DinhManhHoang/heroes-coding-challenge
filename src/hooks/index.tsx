@@ -84,7 +84,9 @@ export function useCombatantHandler(): CombatantHandler {
           health: {
             current: Math.min(combatants[i].health.current, newCombatant.health.current),
             maximum: newCombatant.health.maximum
-          }
+          },
+          critical: Math.min(combatants[i].health.current, newCombatant.health.current) <= 50,
+          dead: Math.min(combatants[i].health.current, newCombatant.health.current) <= 0,
         };
       } else {
         newCombatants[i] = { ...combatants[i] };
