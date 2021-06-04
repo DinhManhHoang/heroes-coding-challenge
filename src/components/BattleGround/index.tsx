@@ -1,6 +1,6 @@
 import { CombatantContextType, CombatantContext } from 'contexts';
 import React from 'react';
-import { Stage, Layer, Image, Text, Rect } from 'react-konva';
+import { Stage, Layer, Image, Text } from 'react-konva';
 import { TCombatant } from 'types';
 import useImage from 'use-image';
 import defaultImg from 'assets/default.png';
@@ -79,7 +79,8 @@ export const BattleGround = () => {
     }
   }, [combatants, doCombat]);
 
-  return (
+  return isCombat 
+  ? (
     <Stage width={w} height={h}>
       <Layer>
         {combatants.map((combatant, index) => (
@@ -91,11 +92,7 @@ export const BattleGround = () => {
           />
         ))}
       </Layer>
-      {isCombat === false && 
-      (<Layer>
-        <Rect width={w} height={h} fill="rgba(255, 255, 255, 0.6)"/>
-        <Text text={`Stop`} fontSize={w * 0.1} align="center" verticalAlign="middle" width={w} height={h}/>
-      </Layer>)}
     </Stage>
-  );
+  )
+  : null;
 }

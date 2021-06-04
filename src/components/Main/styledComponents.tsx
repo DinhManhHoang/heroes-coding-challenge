@@ -46,5 +46,4 @@ export const RightContainer = styled.div`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  border: 1px solid black;
 `;

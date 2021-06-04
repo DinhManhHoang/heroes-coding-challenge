@@ -39,7 +39,7 @@ function Main() {
             </Switch>
           </Router>
         </LeftContainer>
-        <RightContainer className="battle-ground-wrapper">
+        <RightContainer>
           <BattleGround />
         </RightContainer>
       </Container>
